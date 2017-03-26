@@ -14,7 +14,7 @@ import Machine.Sky.Types
 
 {-# ANN topEntity
   (defTop
-    { t_name     = "sky"
+    { t_name     = "basic-cpu"
     , t_inputs  = ["Sw", "Btn"]
     , t_outputs  = ["an", "seg", "Led"]
     , t_extraIn  = [ ("mclk", 1)

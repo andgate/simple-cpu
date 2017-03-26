@@ -11,7 +11,7 @@ type CpuOut = (Address, MayWrite)
 
 data CpuState = 
   CpuState
-  { addr :: Address
+  { pc :: Address
   } deriving Show
 
 initial :: CpuState
@@ -25,17 +25,17 @@ cpuHardware = mealy cpu initial
 cpu :: CpuState -> CpuIn -> (CpuState, CpuOut)
 cpu s i@(sw, btn) = (s', (currAddr, maywrite))
   where
-    currAddr = addressSelector (addr s) btn
-    s' = s { addr = currAddr }
+    pc' = addressSelector (pc s) btn
+    s' = s { pc = pc' }
     maywrite = case testBit btn 0 of
-        True -> Just (currAddr, sw)
+        True -> Just (pc', sw)
         False -> Nothing
 
 
 addressSelector :: Address -> Buttons -> Address
-addressSelector prevAddr btn = newAddr
+addressSelector a btn = newAddr
   where
     newAddr = case (testBit btn 3, testBit btn 2) of
-          (True, False)  -> prevAddr - 1
-          (False, True)  -> prevAddr + 1
-          _       -> prevAddr
+          (True, False)  -> a - 1
+          (False, True)  -> a + 1
+          _       -> a
