@@ -1,4 +1,4 @@
-module Machine.Sky.Types where
+module Machine.Basic.Types where
 
 import CLaSH.Prelude
 

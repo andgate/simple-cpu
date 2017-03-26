@@ -1,15 +1,15 @@
 {-# LANGUAGE BinaryLiterals #-}
-module Machine.Sky (topEntity) where
+module Machine.Basic (topEntity) where
 
 import CLaSH.Prelude
 import CLaSH.Signal.Explicit
 import CLaSH.Sized.BitVector ((++#))
 
-import Machine.Sky.Controller.Memory
-import Machine.Sky.Controller.Device
-import Machine.Sky.CPU
-import Machine.Sky.RAM
-import Machine.Sky.Types
+import Machine.Basic.Controller.SevenSeg
+import Machine.Basic.CPU
+import Machine.Basic.MMU
+import Machine.Basic.RAM
+import Machine.Basic.Types
 
 
 {-# ANN topEntity

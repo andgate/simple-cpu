@@ -1,9 +1,9 @@
 {-# LANGUAGE BinaryLiterals #-}
-module Machine.Sky.CPU where
+module Machine.Basic.CPU where
 
 import CLaSH.Prelude
 
-import Machine.Sky.Types
+import Machine.Basic.Types
 
 type CpuIn = (Switches, Buttons)
 type CpuOut = (Address, MayWrite)

@@ -1,4 +1,4 @@
-module Machine.Sky.RAM where
+module Machine.Basic.RAM where
 
 import CLaSH.Prelude
 

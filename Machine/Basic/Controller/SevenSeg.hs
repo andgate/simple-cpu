@@ -1,8 +1,8 @@
 {-# LANGUAGE BinaryLiterals #-}
-module Machine.Sky.Device.Output.SevenSeg where
+module Machine.Basic.Controller.SevenSeg where
 
 import CLaSH.Prelude
-import Machine.Sky.Device
+import Machine.Basic.Device
 
 
 sevenSegsDevice :: Device
